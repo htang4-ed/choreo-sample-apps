@@ -21,7 +21,7 @@ RUN apk add --upgrade libtasn1-progs
 # https://security.alpinelinux.org/vuln/CVE-2022-37434
 RUN apk update && apk upgrade zlib
 
-RUN apk update stdlib
+RUN apk upgrade --no-cache
 
 # Create a new user with UID 10014
 RUN addgroup -g 10014 choreo && \
