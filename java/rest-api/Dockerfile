@@ -3,6 +3,8 @@
 # 1. Building the App with Maven
 FROM maven:3.8.7-eclipse-temurin-19-alpine
 
+RUN apk upgrade --no-cache
+
 ADD . /java-springboot
 WORKDIR /java-springboot
 
