@@ -3,8 +3,6 @@
 # 1. Building the App with Maven
 FROM maven:3.8.7-eclipse-temurin-19-alpine
 
-RUN apk upgrade --no-cache
-
 ADD . /java-springboot
 WORKDIR /java-springboot
 
@@ -22,8 +20,6 @@ RUN apk add --upgrade libtasn1-progs
 
 # https://security.alpinelinux.org/vuln/CVE-2022-37434
 RUN apk update && apk upgrade zlib
-
-RUN apk upgrade --no-cache
 
 # Create a new user with UID 10014
 RUN addgroup -g 10014 choreo && \
